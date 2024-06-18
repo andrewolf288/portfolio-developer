@@ -1,0 +1,36 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+
+const EXPERIENCE = [
+    {
+        date: "Enero 2023 - Actualidad",
+        title: "Encargado de programación",
+        company: "EMARAN S.A.C",
+        description:
+            "Diseño y desarrollo de sistemas para optimización de procesos internos de las diferentes áreas de la organización agroindustrial.",
+        link: "https://emaransac.com/"
+    },
+    {
+        date: "Septiembre 2023 - Febrero 2024",
+        title: "Lider de proyecto",
+        company: "Portillo Construcciones S.A.C",
+        description:
+            "Lider de proyecto para la implementación de CRM inmobiliario personalizado. Optimización del proceso de captura, seguimiento y distribución de leads.",
+        link: "https://www.portillo.pe/"
+    }
+];
+---
+
+<ol class="relative border-s border-gray-200 dark:border-gray-700">
+    {
+        EXPERIENCE.map(({ date, title, description, link, company }) => (
+            <ExperienceItem
+                date={date}
+                company={company}
+                title={title}
+                description={description}
+                link={link}
+            />
+        ))
+    }
+</ol>
