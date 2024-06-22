@@ -1,0 +1,59 @@
+---
+import PHPIcon from "../icons/PHPIcon.astro";
+import MYSQLIcon from "../icons/MYSQLIcon.astro";
+import ReactIcon from "../icons/ReactIcon.astro";
+
+const TAGS = {
+    PHP: {
+        name: "PHP",
+        class: "bg-[#8993BE] text-[#232531]",
+        icon: PHPIcon,
+    },
+    MYSQL: {
+        name: "MYSQL",
+        class: "bg-white text-[#00546B]",
+        icon: MYSQLIcon,
+    },
+    REACT: {
+        name: "React",
+        class: "bg-white text-[#00D8FF]",
+        icon: ReactIcon,
+    },
+};
+
+const PROJECTS = [
+    {
+        title: "Proyecto 1",
+        description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in consequat nulla. Praesent maximus laoreet odio vitae commodo. Aliquam non purus et nibh lobortis cursus. Pellentesque laoreet tortor sit amet tincidunt aliquam. Vestibulum at auctor lacus. Duis lacinia volutpat libero at mattis. Curabitur varius lorem in quam tincidunt, vel venenatis risus vehicula.",
+        link: "#",
+        github: "#",
+        image: "https://via.placeholder.com/300x200",
+        tags: [TAGS.PHP, TAGS.REACT, TAGS.MYSQL],
+    },
+];
+---
+
+{
+    PROJECTS.map(({ title, description, tags, image }) => (
+        <article>
+            <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
+            <p class="text-lg mb-4 text-pretty">{description}</p>
+            <ul class="flex gap-x-2 flex-row">
+                {tags.map((tag) => (
+                    <li>
+                        <span class={`flex items-center gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}>
+                            <tag.icon class="size-4" />
+                            {tag.name}
+                        </span>
+                    </li>
+                ))}
+            </ul>
+            <img
+                class="rounded shadow-2xl shadow-white/20"
+                src={image}
+                alt={title}
+            />
+        </article>
+    ))
+}

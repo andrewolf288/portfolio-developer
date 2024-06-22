@@ -8,22 +8,24 @@ import Mail from "../icons/Mail.astro";
 import Experience from "../components/Experience.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import Briefcase from "../icons/Briefcase.astro";
+import Code from "../icons/Code.astro";
+import Projects from "../components/Projects.astro";
 ---
 
 <Layout 
 title="Porfolio de Andrew - Desarrollador y Programador Web con +1 año de experencia"
 description="Porfolio de Andrew - Desarrollador y Programador Web con +1 año de experencia"
 >
-	<main>
+	<main class="px-4">
 		<!-- INTRODUCTION -->
-		 <SectionContainer class="py-44 pb-24" id="top">
+		 <SectionContainer class="py-44 pb-34" id="top">
 			 <img
 				 class="rounded-full w-12 h-12"
 				 src="https://images.ctfassets.net/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/24e953b920a9cd0ff2e1d587742a2472/1-intro-photo-final.jpg?w=1200&h=992&fl=progressive&q=70&fm=jpg"
 				 alt="Foto de Andrew"
 			 />
 			 <h1
-				 class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-4"
+				 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10"
 			 >
 				 Hey, soy Andrew <a
 					 class="flex justify-center items-center"
@@ -34,7 +36,7 @@ description="Porfolio de Andrew - Desarrollador y Programador Web con +1 año de
 					 <Badge>Disponible para trabajar</Badge>
 				 </a>
 			 </h1>
-			 <h2 class="text-xl opacity-80 text-wrap">
+			 <h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]">
 				 <span>+1 año de experiencia. </span><span
 					 class="text-yellow-200/90">Desarrollador Web y Mobile.</span
 				 ><span class="text-red-200/90"> De Arequipa, Perú.</span>
@@ -43,28 +45,38 @@ description="Porfolio de Andrew - Desarrollador y Programador Web con +1 año de
 					 únicas.</span
 				 >
 			 </h2>
-			 <nav class="flex gap-x-4 mt-8">
+			 <nav class="flex gap-4 mt-8 flex-wrap">
 				 <SocialPill href="https://linkedin.com/in/andrew-pold-jacobo-castillo">
-					 <LinkedIn class="size-6" />
+					 <LinkedIn class="size-4 md:size-6" />
 					 LinkedIn
 				 </SocialPill>
 				 <SocialPill href="https://github.com/andrewolf288">
-					 <GitHub class="size-6" />
+					 <GitHub class="size-4 md:size-6" />
 					 GitHub
 				 </SocialPill>
 				 <SocialPill href="mailto:pold.jacobo89@gmail.com">
-					 <Mail class="size-6" />
+					 <Mail class="size-4 md:size-6" />
 					 pold.jacobo89@gmail.com
 				 </SocialPill>
 			 </nav>
 		 </SectionContainer>
+
 		<!-- EXPERIENCE -->
-		 <SectionContainer id="experiencia">
-			<h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
+		<SectionContainer id="experiencia">
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
 				<Briefcase class="size-7"/>
 				Experiencia laboral
 			</h2>
 			 <Experience />
+		 </SectionContainer>
+
+		 <!-- PROYECTOS -->
+		 <SectionContainer id="proyectos">
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+				<Code class="size-7"/>
+				Proyectos
+			</h2>
+			<Projects />
 		 </SectionContainer>
 	</main>
 </Layout>
